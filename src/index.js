@@ -18,7 +18,7 @@ const App = () => {
         <Route exact path="/movies/favourites" element={<favouriteMoviesPage />} />
         <Route path="/movies/:id" element={<MoviePage />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="*" element={ <Navigate to="/" /> } />
+        <Route path="*" element={ <Navigate to="/" />  } />
         <Route path="/movies/upcoming" element={<UpcomingMovies/>}  />
       </Routes>
     </BrowserRouter>
