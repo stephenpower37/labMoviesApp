@@ -7,6 +7,7 @@ import favouriteMoviesPage from "./pages/favouriteMoviesPage";
 import {Link} from 'react-router-dom'
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
+import UpcomingMovies from "./pages/upcomingMoviesPage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/movies/:id" element={<MoviePage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={ <Navigate to="/" /> } />
+        <Route path="/movies/upcoming" element={<UpcomingMovies/>}  />
       </Routes>
     </BrowserRouter>
   );
