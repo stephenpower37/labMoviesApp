@@ -6,7 +6,7 @@ export default {
       id: 10,
       name: "Star Wars Collection",
       poster_path: "/iTQHKziZy9pAAY4hHEDCGPaOvFC.jpg",
-      backdrop_path: "/d8duYyyC9J5T825Hg7grmaabfxQ.jpg",
+      backdrop_path: "/d8duYyyC9J5T825Hg7grmaabfxQ.jpg", 
     },
     budget: 200000000,
     genres: [
@@ -47,7 +47,7 @@ export default {
       {
         id: 11092,
         logo_path: null,
-        name: "Ram Bergman Productions",
+        name: "Ram Bergman Productions" ,
         origin_country: "US",
       },
       {

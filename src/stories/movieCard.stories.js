@@ -12,7 +12,7 @@ export default {
   decorators: [
     (Story) => <MemoryRouter initialEntries={["/"]}>{Story()}</MemoryRouter>,
     (Story) => <MoviesContextProvider>{Story()}</MoviesContextProvider>,
-  ],
+  ] ,
 };
 
 export const Basic = () => {
