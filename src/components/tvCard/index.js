@@ -1,6 +1,5 @@
 import React, { useContext  } from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
@@ -49,7 +48,7 @@ export default function MovieCard({ movie, action }) {
       }
         title={
           <Typography variant="h5" component="p">
-            {movie.title}{" "}
+            {movie.name}{" "}
           </Typography>
         }
       />
@@ -66,7 +65,7 @@ export default function MovieCard({ movie, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {movie.release_date}
+              {movie.first_air_date}
             </Typography>
           </Grid>
           <Grid item xs={6}>
@@ -77,14 +76,7 @@ export default function MovieCard({ movie, action }) {
           </Grid>
         </Grid>
       </CardContent>
-      <CardActions disableSpacing>
-    {action(movie)}
-    <Link to={`/movies/${movie.id}`}>
-      <Button variant="outlined" size="medium" color="primary">
-        More Info ...
-      </Button>
-    </Link>
-  </CardActions>
+      
     </Card>
   );
 }

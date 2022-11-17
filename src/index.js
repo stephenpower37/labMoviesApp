@@ -7,12 +7,13 @@ import FavouriteMoviesPage from "./pages/favouriteMoviesPage";
 import TopRatedMoviesPage from "./pages/topRatedMoviesPage"; 
 import WatchListMoviesPage from "./pages/watchlistMoviesPage"; 
 import MovieReviewPage from "./pages/movieReviewPage";
-import SiteHeader from './components/siteHeader'
+import SiteHeader from './components/siteHeader';
 import UpcomingMovies from "./pages/upcomingMoviesPage";
 import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from 'react-query/devtools'
+import { ReactQueryDevtools } from 'react-query/devtools';
 import MoviesContextProvider from "./contexts/moviesContext";
-import AddMovieReviewPage from './pages/addMovieReviewPage'
+import AddMovieReviewPage from './pages/addMovieReviewPage';
+import PopularTvShowsPage from './pages/popularTvShowsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="*" element={ <Navigate to="/" />  } />
         <Route path="/movies/upcoming" element={<UpcomingMovies/>}  />
         <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
+        <Route path="/tv/popular" element={<PopularTvShowsPage/>} />
       </Routes>
       </MoviesContextProvider>
     </BrowserRouter>

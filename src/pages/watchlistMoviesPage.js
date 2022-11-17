@@ -30,8 +30,6 @@ const MustWatchMoviesPage = () => {
     return q.data
   });
 
-  const toDo = () => true;
-
   return (
     <PageTemplate
       title="Watch List Movies"
