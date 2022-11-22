@@ -1,5 +1,6 @@
 import React, { useContext  } from "react";
 import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
@@ -14,6 +15,7 @@ import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import { MoviesContext } from "../../contexts/moviesContext";
 import { PlaylistAdd } from "@mui/icons-material";
+import TvIcon from '@mui/icons-material/Tv';
 
 export default function MovieCard({ movie, action }) {
     const { favourites, mustWatch } = useContext(MoviesContext);

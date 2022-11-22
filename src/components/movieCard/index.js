@@ -75,6 +75,7 @@ export default function MovieCard({ movie, action }) {
               {"  "} {movie.vote_average}{" "}
             </Typography>
           </Grid>
+          
         </Grid>
       </CardContent>
       <CardActions disableSpacing>

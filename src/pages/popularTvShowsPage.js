@@ -3,6 +3,7 @@ import PageTemplate from "../components/templateTvShowListPage";
 import { getPopularTvShows } from "../api/tmdb-api";
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
+import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
 
 const PopularTvShowPage = (props) => {
   
@@ -21,6 +22,9 @@ const PopularTvShowPage = (props) => {
     <PageTemplate
       title="Popular TV Shows"
       movies={movies}
+      action={(movie) => {
+        return <AddToFavouritesIcon movie={movie} />
+      }}
     />
   );
 };
