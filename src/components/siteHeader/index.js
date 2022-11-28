@@ -27,10 +27,9 @@ const SiteHeader = ({ history }) => {
     { label: "Home", path: "/" },
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Top Rated", path: "/movies/top_rated" },
+    { label: "Popular TV Shows", path: "/tv/popular" },
+    { label: "Favourites", path: "/movies/favourites"  },
     { label: "Watch List", path: "/movies/watch_list" },
-    { label: "Popular (TV)", path: "/tv/popular" },
-    { label: "Favourites (Movies)", path: "/movies/favourites"  },
-    { label: "Favourites (TV)", path: "/tv/latest" },
   ];
 
   const handleMenuSelect = (pageURL) => {
