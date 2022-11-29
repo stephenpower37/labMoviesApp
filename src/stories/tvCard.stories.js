@@ -26,7 +26,7 @@ export const Basic = () => {
 Basic.storyName = "Default";
 
 export const Exceptional = () => {
-  const sampleNoPoster = { ...SampleTvShow, poster_path: "/vC324sdfcS313vh9QXwijLIHPJp.jpg" };
+  const sampleNoPoster = { ...SampleTvShow, poster_path: undefined };
   return (
     <TvCard
       tv={sampleNoPoster}

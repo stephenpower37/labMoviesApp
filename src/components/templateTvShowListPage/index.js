@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Header from "../headerMovieList";
 import FilterCard from "../filterTvShowsCard";
-import MovieList from "../tvList";
+import TvList from "../tvList";
 import Grid from "@mui/material/Grid";
 
-function TvShowListPageTemplate({ movies, title, action }) {
+function TvShowListPageTemplate({ tvs, title, action }) {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const genreId = Number(genreFilter);
 
-  let displayedMovies = movies
+  let displayedTvShows = tvs
     .filter((m) => {
       return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
@@ -35,7 +35,7 @@ function TvShowListPageTemplate({ movies, title, action }) {
             genreFilter={genreFilter}
           />
         </Grid>
-        <MovieList action={action} movies={displayedMovies}></MovieList>
+        <TvList action={action} tvs={displayedTvShows}></TvList>
       </Grid>
     </Grid>
   );
