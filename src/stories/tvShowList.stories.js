@@ -3,14 +3,15 @@ import TvList from "../components/tvList";
 import SampleMovie from "./sampleDataTv";
 import { MemoryRouter } from "react-router";
 import Grid from "@mui/material/Grid";
-import MoviesContextProvider from "../contexts/moviesContext";
+import TvShowContextProvider from "../contexts/tvShowContext";
+import AddToTvShowFavouritesIcon from "../components/cardIcons/addToTvShowFavourites";
 
 export default {
   title: "Home Page/TvShowList",
   component: TvList,
   decorators: [
     (Story) => <MemoryRouter initialEntries={["/"]}>{Story()}</MemoryRouter>,
-    (Story) => <MoviesContextProvider>{Story()}</MoviesContextProvider>,
+    (Story) => <TvShowContextProvider>{Story()}</TvShowContextProvider>,
   ] ,
 };
 
@@ -25,6 +26,7 @@ export const Basic = () => {
     <Grid container spacing={5}>
       <TvList
         tvs={tv}
+        action={(tv) => <AddToTvShowFavouritesIcon tv={tv} />}
       />
     </Grid>
   );

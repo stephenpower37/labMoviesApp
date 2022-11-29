@@ -14,52 +14,71 @@ import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
+import { TvShowContext } from "../../contexts/tvShowContext";
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
-import TvHeader from "../headerTvShow";
 
-export default function tvCard({ tv, action }) {
-   
+export default function TvCard({ tv, action }) {
+
+  const { favourites, addToFavourites } = useContext(TvShowContext);
+ 
+   if (favourites.find((id) => id === tv.id)) {
+     tv.favourite = true;
+   } else {
+     tv.favourite = false
+   }
+ 
+   const handleAddToFavourite = (e) => {
+     e.preventDefault();
+     addToFavourites(tv);
+   };
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-       title={
-        <Typography variant="h5" component="p">
-          {tv.name}{" "}
-        </Typography>
-      }
-    />
-    <CardMedia
-      sx={{ height: 500 }}
-      image={
-        tv.poster_path
-          ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
-          : img
-      }
-    />
-    <CardContent>
-      <Grid container>
-        <Grid item xs={6}>
-          <Typography variant="h6" component="p">
-            <CalendarIcon fontSize="small" />
-            {tv.first_air_date}
+        avatar={
+          tv.favourite ? (
+            <Avatar sx={{ backgroundColor: 'red' }}>
+              <FavoriteIcon />
+            </Avatar>
+          ) : null
+        }
+        title={
+          <Typography variant="h5" component="p">
+            {tv.name}{" "}
           </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <Typography variant="h6" component="p">
-            <StarRateIcon fontSize="small" />
-            {"  "} {tv.vote_average}{" "}
-          </Typography>
-        </Grid>
+        }
+      />
+      <CardMedia
+        sx={{ height: 500 }}
+        image={
+          tv.poster_path
+            ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
+            : img
+        }
+      />
+      <CardContent>
+        <Grid container>
+          <Grid item xs={6}>
+            <Typography variant="h6" component="p">
+              <CalendarIcon fontSize="small" />
+              {tv.first_air_date}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h6" component="p">
+              <StarRateIcon fontSize="small" />
+              {"  "} {tv.vote_average}{" "}
+            </Typography>
+          </Grid>
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-    
-    <Link to={`/tv/${tv.id}`}>
-      <Button variant="outlined" size="medium" color="primary">
-        More Info ...
-      </Button>
-    </Link>
-  </CardActions>
+        {action(tv)}
+        <Link to={`/tv/${tv.id}`}>
+          <Button variant="outlined" size="medium" color="primary">
+            More Info ...
+          </Button>
+        </Link>
+      </CardActions>
     </Card>
   );
 }
