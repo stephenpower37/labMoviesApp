@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
@@ -11,9 +9,7 @@ import Drawer from "@mui/material/Drawer";
 import VideocamIcon from '@mui/icons-material/Videocam';
 import EventIcon from '@mui/icons-material/Event';
 import TodayIcon from '@mui/icons-material/Today';
-import AlbumIcon from '@mui/icons-material/Album';
 import TvIcon from '@mui/icons-material/Tv';
-
 
 const root = {
     display: "flex",
@@ -52,10 +48,8 @@ const TVDetails = ({ tv }) => {
         ))}
       </Paper>
       <Paper component="ul" sx={root}>
-        <Chip icon={<AccessTimeIcon />} label={`${tv.episode_run_time[0]} min./EP`} />
-        <Chip
-          icon={<AlbumIcon />}
-          label={`Seasons: ${tv.number_of_seasons}`}
+      <Chip 
+          icon={<TvIcon/>} label={`Status: ${tv.status}`} 
         />
         <Chip
           icon={<VideocamIcon />}
@@ -63,11 +57,10 @@ const TVDetails = ({ tv }) => {
         />
         <Chip
           icon={<StarRate />}
-          label={`Rating: ${tv.vote_average} (${tv.vote_count} total ratings)`}
+          label={`Rating: ${tv.vote_average}`}
         />
       </Paper>
       <Paper component="ul" sx={root}>
-        <Chip icon={<TvIcon/>} label={`Status: ${tv.status}`} />
         <Chip icon={<TodayIcon/>} label={`First Aired: ${tv.first_air_date}`} />
         <Chip icon={<EventIcon/>} label={`Last Aired: ${tv.last_air_date}`} />
       </Paper>
@@ -79,19 +72,6 @@ const TVDetails = ({ tv }) => {
           <Chip label="Production Countries" sx={chip} color="primary" />
         </li>
         {tv.production_countries.map((c) => (
-          <li key={c.name}>
-            <Chip label={c.name} sx={chip} />
-          </li>
-        ))}
-      </Paper>
-      <Paper 
-        component="ul" 
-        sx={root}
-      >
-        <li>
-          <Chip label="Networks" sx={chip} color="primary" />
-        </li>
-        {tv.networks.map((c) => (
           <li key={c.name}>
             <Chip label={c.name} sx={chip} />
           </li>

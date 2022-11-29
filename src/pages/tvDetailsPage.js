@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
 import TVDetails from "../components/tvDetails/";
-import PageTemplate from "../components/templateMoviePage";
+import PageTemplate from "../components/templateTvShowPage";
 import { getTV } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
