@@ -36,16 +36,20 @@ export default function MovieCard({ movie, action }) {
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          movie.favorite ? (
+
+          movie.favourite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
             <FavoriteIcon />
+        </Avatar>
+            ) : null ||
+
+          movie.mustWatch ? (
+              <Avatar sx={{ backgroundColor: 'red' }}>
+              <PlaylistAdd />
           </Avatar>
-              ) :
-              movie.mustWatch ? (
-                <Avatar sx={{ backgroundColor: 'red' }}>
-                <PlaylistAdd />
-              </Avatar>
               ) : null
+
+          
       }
         title={
           <Typography variant="h5" component="p">
