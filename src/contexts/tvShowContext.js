@@ -13,8 +13,7 @@ const TvShowContextProvider = (props) => {
     setFavourites(newFavourites);
     console.log(newFavourites);
   };
-
-  // We will use this function in a later section
+  
   const removeFromFavourites = (tv) => {
     setFavourites( favourites.filter(
       (tId) => tId !== tv.id
