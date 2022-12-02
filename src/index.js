@@ -17,7 +17,6 @@ import TvShowsContextProvider from "./contexts/tvShowContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import PopularTvShowsPage from './pages/popularTvShowsPage';
 import FavouriteTvShowPage from "./pages/favouriteTvShowPage";
-import FantasyMoviePage from "./pages/fantasyMoviePage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -49,7 +48,6 @@ const App = () => {
         <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
         <Route path="/tv/popular" element={<PopularTvShowsPage/>} />
         <Route path="/tv/favourites" element={<FavouriteTvShowPage/>} />
-        <Route path="/movie/fantasy" element={<FantasyMoviePage/>} />
       </Routes>
       </TvShowsContextProvider>
       </MoviesContextProvider>
